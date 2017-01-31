@@ -1,0 +1,17 @@
+
+<section class="settings-wrapper">
+  <div class="inner">
+
+    <h1>Settings</h1>
+
+    <h2>Clear all sitemap data from local storage?</h2>
+    <div class="button" (click)="clearStorage()">Clear</div>
+
+    <hr />
+
+    <h2>Edit JSON Data</h2>
+    <div class="button" (click)="saveEditedData()">Save</div>
+    <textarea [(ngModel)]="JSONdata"></textarea>
+    
+  </div>
+</section>

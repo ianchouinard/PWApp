@@ -1,0 +1,11 @@
+
+    <ul>
+        <li *ngFor="let map of maps; let i = index;">
+            <div (click)="selectEntry(map?._id, map?.passkey, map?.isPassProtected)" class="sitemap-toggle">
+                <h1>{{ map?.title }}</h1>
+                <p>{{ map?.description }}</p>
+            </div>
+            <span class="remove-sitemap remove-btn" (click)="removeEntry(map?._id)">-</span>
+        </li>
+    </ul>
+

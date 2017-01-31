@@ -1,0 +1,58 @@
+<section class="grid-row">
+
+  <section id="map-selector" class="col lg-3 md-5 sm-12">
+    <div class="controls">
+      <div class="inner">
+        <div class="add-page" (click)="makeNew()">+ <span>Create New</span></div>
+        <div class="mobile-maps-toggle button" (click)="toggleMobileSelector()">...</div>
+      </div>
+    </div>
+    <div class="scrollable side-main">
+      <div class="col-inner current-list">
+        <ul>
+          <li>
+            <div class="sitemap-toggle">
+              <h1>{{ entry?.title }}</h1>
+              <p>{{ entry?.description }}</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <h2>Recently Viewed</h2>
+      <div class="col-inner recent-list">
+        <my-preview [maps]="recentEntries"></my-preview>
+      </div>
+    </div>
+  </section>
+
+  <section id="sitemap-view" class="col lg-9 md-7 sm-12">
+    <div class='grid-row'>
+      <div class="col lg-12 map-view-tools">
+        <div class="inner">
+          <div class="button" (click)="saveChanges()">
+            <span>Save</span>
+          </div>
+          <div class="button" (click)="deleteEntry()">
+            <span>Discard</span>
+          </div>
+          <div class="input-field">
+            <input type="text" [(ngModel)]="entry && entry.passKey" placeholder="Add a pass key" />
+            <svg viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+                    <circle cx="39.847" cy="39.953" r="38.348" style="fill:#2f2f2f;"/><path d="M57.782,39.324l-26.652,0l0,-11.588c0,-2.559 0.905,-4.744 2.715,-6.555c1.811,-1.81 3.995,-2.715 6.555,-2.715c2.559,0 4.744,0.905 6.554,2.715c1.811,1.811 2.716,3.997 2.716,6.555c0,0.628 0.229,1.172 0.688,1.63c0.459,0.459 1.002,0.687 1.63,0.687l2.318,0c0.627,0 1.17,-0.228 1.629,-0.687c0.458,-0.459 0.688,-1.002 0.688,-1.63c0,-4.465 -1.588,-8.286 -4.762,-11.462c-3.174,-3.174 -6.995,-4.761 -11.461,-4.761c-4.467,0 -8.287,1.587 -11.461,4.761c-3.175,3.176 -4.762,6.997 -4.762,11.462l0,11.588l-1.159,0c-0.966,0 -1.787,0.338 -2.463,1.015c-0.676,0.676 -1.014,1.496 -1.014,2.461l0,20.86c0,0.966 0.338,1.786 1.014,2.462c0.676,0.677 1.496,1.015 2.463,1.015l34.764,0c0.966,0 1.787,-0.338 2.463,-1.015c0.676,-0.676 1.014,-1.496 1.014,-2.462l0,-20.86c0,-0.964 -0.338,-1.785 -1.014,-2.461c-0.676,-0.676 -1.497,-1.015 -2.463,-1.015Zm-14.66,14.47l0,6.802c0,1.371 -1.111,2.482 -2.482,2.482l-0.479,0c-1.371,0 -2.483,-1.111 -2.483,-2.482l0,-6.802c-1.457,-0.911 -2.43,-2.524 -2.43,-4.369c0,-2.846 2.307,-5.152 5.152,-5.152c2.845,0 5.152,2.307 5.152,5.152c0,1.845 -0.973,3.459 -2.43,4.369Z" style="fill:#3fbf7f;fill-rule:nonzero;"/>
+                </svg>
+          </div>
+        </div>
+      </div>
+      <div class="col lg-12 scrollable">
+        <div class="col-inner sitemap-wrapper">
+          <my-entry-view [data]="entry"></my-entry-view>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+
+
+<my-modals [type]="modal"></my-modals>

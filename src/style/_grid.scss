@@ -1,0 +1,121 @@
+
+//Grid options
+$include-grid: true;                //include grid classes?
+$column-number: 12;                 //number of columns
+$col-break-tablet: 1350px;
+$col-break-medium: 1000px;           //medium responsive breakpoint (max-width)
+$col-break-small: 720px;            //small responsive breakpoint (max-width)
+$col-break-extra-small: 500px;
+$include-padding: true;             //include padding property on grid items
+$padding: 10px;                     //padding around each grid item
+
+@if $include-grid {
+    
+    @for $i from 1 through $column-number {
+        $new-width: 8.333% * $i;
+        .lg-#{$i} {
+            width: $new-width;
+            flex-basis: $new-width;
+        }
+    }  
+    
+    @media screen and (max-width: $col-break-tablet) {
+        @for $i from 1 through $column-number {
+            .tb-#{$i} {
+                $col-medium-width: 8.333% * $i;
+                width: $col-medium-width;
+                flex-basis: $col-medium-width;
+            }
+        }
+    }
+
+    @media screen and (max-width: $col-break-medium) {
+        @for $i from 1 through $column-number {
+            .md-#{$i} {
+                $col-medium-width: 8.333% * $i;
+                width: $col-medium-width;
+                flex-basis: $col-medium-width;
+            }
+        }
+    }
+    
+    @media screen and (max-width: $col-break-small) {
+        @for $i from 1 through $column-number {
+            .sm-#{$i} {
+                $col-small-width: 8.333% * $i;
+                width: $col-small-width;
+                flex-basis: $col-small-width;
+            }
+        }
+    }
+
+    @media screen and (max-width: $col-break-extra-small) {
+        @for $i from 1 through $column-number {
+            .xs-#{$i} {
+                $col-xsmall-width: 8.333% * $i;
+                width: $col-xsmall-width;
+                flex-basis: $col-xsmall-width;
+            }
+        }
+    }
+    
+    .col{
+        float: left;
+        @if $include-padding {
+            .col-inner {
+                padding: $padding;
+                float: none;
+                &.btn-align-bottom {
+                    margin-top: 20px;
+                }
+                &.bottom-top-none {
+                    padding-bottom: 0;
+                    padding-top: 0;
+                }
+                &.no-left-padding {
+                    padding-left: 0;
+                }
+                &.no-right-padding {
+                    padding-right: 0;
+                }
+                &.no-bottom-padding {
+                    padding-bottom: 0;
+                }
+                &.no-top-padding {
+                    padding-top: 0;
+                }
+            }
+            .col-item {
+                float: none;
+                padding: 5px 10px 5px 0;
+            }
+        }
+    }
+    
+    .fl{
+        float: right;
+    }
+    
+    .grid-row{
+        &:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        a.col {
+            display: block;
+        }
+        //if flex is support it will use it if .flex-grid is added to your .grid-row, 
+        //otherwise the default float layout is used
+        &.flex-grid {
+            display: flex;
+            flex-wrap: wrap;
+            .col {
+                flex-direction: column;
+                .col-inner {
+                    height: calc(100% - 20px); //will likely vary based on what you need.
+                }
+            }
+        }
+    }   
+}

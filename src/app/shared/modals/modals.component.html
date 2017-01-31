@@ -1,0 +1,12 @@
+<section class="modal" *ngIf="type == 'passwordPrompt'">
+    <h1>Password Required</h1>
+    <div class="modal-inner">
+        <p>This entry is password protected. Please enter a password and click go.</p>
+        <input type="text" [(ngModel)]="inputValue" placeholder="Enter a password" />
+        <div class="modal-btn" (click)="handleConfirmation()">
+            Go
+        </div>
+    </div>
+</section>
+
+<div class="overlay" *ngIf="type"></div>

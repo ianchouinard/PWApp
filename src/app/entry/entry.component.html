@@ -1,0 +1,21 @@
+
+<div class="grid-row map-start">
+    <div class="meta col lg-12">
+        <div class="col-inner">
+            <input type="text" class="stealth-input" [(ngModel)]="data && data.title" />
+            <textarea [(ngModel)]="data && data.description" class="stealth-input"></textarea>
+            <div>
+                <div class="add-directory" (click)="addList(data?.title)" >+ <span>Add List</span></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="grid-row sitemap-map" [sortablejs]="data?.directories" [sortablejsOptions]="{ animation: 300 }">
+    <div class="col lg-4 md-6 xs-12" *ngFor="let dir of data?.directories">
+        <div class="col-inner">
+            <my-list [directory]="dir"></my-list>
+        </div>
+    </div>
+</div>

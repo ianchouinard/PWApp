@@ -1,0 +1,26 @@
+
+{
+    "sitemaps": [
+        {
+            "id": "sample-site-id-1",
+            "title": "Sample Sitemap",
+            "description": "Description. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eu pharetra nulla. Cras suscipit augue mattis, malesuada mi in, placerat lorem. Nullam varius neque sed lacinia iaculis. Vestibulum ultrices neque sed molestie vestibulum. In hac habitasse platea dictumst. Mauris est metus, iaculis quis interdum eget, porttitor vel justo. Aenean nec turpis metus.",
+            "directories": [
+                {
+                    "id": "sample-site-directory-id-1",
+                    "title": "Home",
+                    "description": "Home page",
+                    "status": "done",
+                    "pages": [
+                        {
+                            "id": "sample-site-page-id-1",
+                            "title": "",
+                            "description": "",
+                            "status": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

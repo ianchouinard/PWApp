@@ -1,0 +1,130 @@
+#map-selector {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.map-view-tools {
+    //background: #3FBF7F;
+    background-image: -webkit-linear-gradient(to right, #3FBF7F, #3AD387);
+    background-image: -ms-linear-gradient(to right, #3FBF7F, #3AD387);
+    background-image: linear-gradient(to right, #3FBF7F, #3AD387);
+    .inner {
+        padding: 10px 20px;
+    }
+}
+
+.controls {
+    border-bottom: 1px solid #242424;
+    background: #1e1e1e;
+    .inner {
+        padding: 11px 20px;
+    }
+    .add-page {
+        display: inline-block;
+        padding: 5px;
+        background: #2f2f2f;
+        border-radius: 3px;
+        cursor: pointer;
+        color: #3FBF7F;
+        font-size: 14px;
+        font-weight: 700;
+        transition: background 350ms;
+        span {
+            font-weight: 400;
+            color: #f2f2f2;
+        }
+        &:hover {
+            background: #e5e5e5;
+            span {
+                color: #2f2f2f;
+            }
+        }
+    }
+    .add-page::selection {
+        background: transparent;
+    }
+    .add-page span::selection {
+        background: transparent;
+    }
+}
+
+.sitemap-wrapper {
+    opacity: 0;
+    transition: opacity 400ms;
+    &.isVisible {
+        opacity: 1;
+    }
+}
+
+.scrollable {
+    height: calc(100vh - 72px);
+    overflow-y: auto;
+}
+
+.side-main {
+    background: #242424;
+    border-right: 1px solid #2f2f2f;
+}
+
+.button {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: inline-block;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background 350ms;
+    span {
+        font-weight: 300;
+        color: #fff;
+    }
+    &:hover {
+        color: #333;
+        background: #f2f2f2;
+        span {
+            color: #333;
+        }
+    }
+}
+.button::selection {
+    background: transparent;
+}
+.button span::selection {
+    background: transparent;
+}
+.button.mobile-maps-toggle {
+    float: right;
+    color: #333;
+    display: none;
+    transition: background 350ms;
+    &:hover {
+        background: #e5e5e5;
+    }
+}
+
+
+@media screen and (max-width: 720px) {
+    .scrollable {
+        height: auto;
+    }
+    .side-main {
+        overflow-x: hidden;
+        .col-inner {
+            max-height: 0px;
+            overflow-y: hidden;
+            padding: 0;
+            transition: max-height 750ms;
+        }
+        &.open .col-inner{
+            max-height: 400px;
+            overflow-y: auto;
+            width: calc(100% + 15px);//offset scrollbar
+        }
+    }
+    .button.mobile-maps-toggle {
+        display: inline-block;
+    }
+}

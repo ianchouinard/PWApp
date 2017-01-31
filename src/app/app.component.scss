@@ -1,0 +1,23 @@
+header {
+    background: #000;
+    padding: 5px;
+    color: #f2f2f2;
+    font-family: 'Source Sans Pro', sans-serif;
+    a {
+        color: #f2f2f2;
+        text-decoration: none;
+    }
+}
+
+header {
+    padding: 0;
+    nav {
+        padding-left:20px;
+        a {
+            display: inline-block;
+            padding: 5px 0 2px 0;
+            margin-right: 10px;
+            border-bottom: 3px solid #555;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+<section class="directory-item">
+    <div class="directory-header">
+        <div class="drag-area">
+        </div>
+        <div class="directory-header-content">
+            <input type="text" [(ngModel)]="directory.title" class="in-h1 highlight" />
+            <input type="text" [(ngModel)]="directory.description" class="in-h3" />
+            <input type="text" [(ngModel)]="directory.status" class="in-h3" />
+        </div>
+        <div class="add-page" (click)="addItem(directory.title)">+</div>
+        <div class="remove-directory remove-btn" (click)="removeList(directory.id)">-</div>
+    </div>
+    <ul *ngIf="directory.pages.length > 0">
+        <li *ngFor="let page of directory.pages">
+            <input type="text" [(ngModel)]="page.title" placeholder="Page Name" class="in-h2" />
+            <input type="text" [(ngModel)]="page.description" placeholder="Description" class="in-h3" />
+            <input type="text" [(ngModel)]="page.status" placeholder="Status" class="in-h3" />
+            <div class="remove-page remove-btn" (click)="removeItem(page.id)" >-</div>
+        </li>
+    </ul>
+</section>
